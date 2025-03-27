@@ -1,0 +1,62 @@
+<!-- https://github.com/ArsenTech/source-codes/tree/main/Weather%20App/assets -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/style.css">
+     <title>Weather App</title>
+</head>
+<body>
+     <div class="container">
+          <h1>Weather App</h1>
+          <form class="search-box" id="search-box">
+               <input type="text" name="location" placeholder="Search..." id="location-input">
+               <button type="submit" aria-label="Search"></button>
+          </form>
+          <p class="errTxt" id="errTxt"></p>
+          <div class="weather-details" id="weather-details">
+               <h2>Weather In <span id="location">Location Name</span></h2>
+               <div class="grid">
+                    <div class="temperature">
+                         <img src="assets/clear.svg" alt="weather-icon" width="150" height="150" id="weather-condition-icon"/>
+                         <p class="temperatureTxt"><span id="temperature">0</span></p>
+                         <p id="weather-condition-name">Clear</p>
+                    </div>
+                    <ul class="info">
+                         <li><img src="assets/humidity.svg" alt="humidity" width="64" height="64"><span id="humidity">0</span>%</li>
+                         <li><img src="assets/wind.svg" alt="wind-speed" width="64" height="64"><span id="wind-speed">0</span>km/h</li>
+                    </ul>
+               </div>
+               <h2>Daily Forecast</h2>
+               <div class="daily-cards" id="daily-forecast"></div>
+          </div>
+     </div>
+     <script src="js/script.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Weather app 1337</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <ul class="nav-bar-list">
+            <li><a href="#">hej1</a></li>
+            <li><a href="#">hej2</a></li>
+            <li><a href="#">hej3</a></li>
+            <li><a href="#">hej4</a></li>
+        </ul>
+    </nav>
+
+    <script src="js/main.js"></script>
+</body>
+</html> -->
+
