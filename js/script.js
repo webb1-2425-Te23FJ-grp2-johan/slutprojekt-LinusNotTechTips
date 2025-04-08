@@ -224,7 +224,7 @@ submitElement.addEventListener('click', async e=>{
           outputElement3.textContent = "Fuktighet: " + relative_humidity_2m + "%";
           outputElement4.textContent = "Vindhastighet: " + wind_speed_10m + " km/s";
           outputElement5.textContent = "Dag? " + is_day;
-          weatherConIcon.classList.toggle('hidden');
+          weatherConIcon.classList.remove('hidden');
           weatherConIcon.src = imgSrc;
      } catch {
           outputElement1.textContent = "Location Not Found";

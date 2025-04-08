@@ -10,23 +10,30 @@
 }
 
 body{
+    display: flex;
     position: relative;
     background: url("../assets/bg.jpeg") no-repeat center/cover;
     min-height: 100lvh;
-    display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
 }
 
 .container {
+    display: flex;
     width: 1200px;
+    height: fit-content;
     padding: 20px;
     border: thin solid black;
     border-radius: 40px;
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
+}
+ 
+#input {
+    margin: 10px;
+    height: fit-content;
 }
 
 .title {
@@ -37,7 +44,7 @@ body{
 .submitButton {
     margin: 10px;
     width: 70px;
-    height: 50px;
+    height: fit-content;
     border: thin solid black;
     background-color: white;
     text-align: center;
@@ -46,4 +53,8 @@ body{
 
 .submitButton:hover {
     background-color: #ddd;
+}
+
+p {
+    margin: 10px;
 }
