@@ -203,11 +203,10 @@ const container = document.querySelector(".container");
 const inputElement = document.getElementById("input");
 const submitElement = document.getElementById("submit");
 const weatherConIcon = document.getElementById("weather-condition-icon");
-const outputElement1 = document.getElementById("output1");
-const outputElement2 = document.getElementById("output2");
-const outputElement3 = document.getElementById("output3");
-const outputElement4 = document.getElementById("output4");
-const outputElement5 = document.getElementById("output5");
+const outputElement1 = document.getElementById("city");
+const outputElement2 = document.getElementById("temp");
+const outputElement3 = document.getElementById("humid");
+const outputElement4 = document.getElementById("wind");
 
 let cityName = "None";
 
@@ -223,7 +222,6 @@ submitElement.addEventListener('click', async e=>{
           outputElement2.textContent = "Temperatur: " + temperature_2m + "°C";
           outputElement3.textContent = "Fuktighet: " + relative_humidity_2m + "%";
           outputElement4.textContent = "Vindhastighet: " + wind_speed_10m + " km/s";
-          outputElement5.textContent = "Dag? " + is_day;
           weatherConIcon.classList.remove('hidden');
           weatherConIcon.src = imgSrc;
      } catch {
