@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,28 +9,61 @@
     visibility: hidden;
 }
 
-body{
+body {
     display: flex;
     position: relative;
-    background: url("../assets/bg.jpeg") no-repeat center/cover;
+    background: url("../assets/bg.webp") no-repeat center/cover;
     min-height: 100lvh;
     justify-content: center;
     align-items: center;
     padding: 15px;
+    padding-top: 20px;
 }
 
-.container {
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 1px 1px;
     display: flex;
-    width: 1200px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in;
+}
+
+.navbar li a:hover {
+    background-color: #f0f0f0;
+}
+
+
+.weather-section {
+    display: flex;
+    max-width: 1200px;
     height: fit-content;
     padding: 20px;
-    border: thin solid black;
+    box-shadow: 0 2px 5px;
     border-radius: 40px;
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
 }
- 
+
 #input {
     margin: 10px;
     height: fit-content;
@@ -55,6 +88,12 @@ body{
     background-color: #ddd;
 }
 
-p {
+.weahter-icon {
+    display: flex;
+    justify-content: end;
+}
+
+.current-data {
     margin: 10px;
+    /* margin-top: 40px; */
 }
