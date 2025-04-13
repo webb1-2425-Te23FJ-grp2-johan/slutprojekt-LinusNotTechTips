@@ -199,8 +199,8 @@ const weather_codes = {
 };
 
 const container = document.querySelector(".container");
-const inputElement = document.getElementById("input");
-const submitElement = document.getElementById("submit");
+const submitElement = document.querySelector(".submitButton");
+const inputElement = document.getElementById("inputBox");
 const weatherConIcon = document.getElementById("weather-condition-icon");
 const outputElement1 = document.getElementById("city");
 const outputElement2 = document.getElementById("temp");
@@ -213,7 +213,7 @@ submitElement.addEventListener('click', async e => {
      e.preventDefault();
      try {
           const weather = await getWeather(inputElement.value);
-          const { temperature_2m, relative_humidity_2m, weather_code, is_day, wind_speed_10m, curTime } = weather.current;
+          const { temperature_2m, relative_humidity_2m, weather_code, is_day, wind_speed_10m } = weather.current;
           const { weather_code: daily_weather_code, temperature_2m_max, temperature_2m_min, time } = weather.daily;
           const weatherCondition = weather_codes[weather_code];
           const imgSrc = `assets/${is_day ? weatherCondition.icons.day : weatherCondition.icons.night}`;
@@ -228,6 +228,7 @@ submitElement.addEventListener('click', async e => {
           outputElement1.textContent = "Location Not Found";
      }
 });
+
 
 async function getLocation(location) {
      const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${location}&count=1&language=en&format=json`);
@@ -244,7 +245,7 @@ async function getWeather(location) {
      const { lat, lon } = await getLocation(location);
      const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,is_day,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min`);
      const data = await res.json();
-     //     console.log(data);
+     console.log(data);
      console.log("Generation time: " + data.generationtime_ms + "ms");
      return data;
 }
