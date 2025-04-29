@@ -1,4 +1,3 @@
-// https://github.com/ArsenTech/source-codes/tree/main/Weather%20App/assets
 const weather_codes = {
      0: {
           name: "Clear Sky",
@@ -198,9 +197,9 @@ const weather_codes = {
      }
 };
 
-const container = document.querySelector(".container");
-const submitElement = document.querySelector(".submitButton");
-const inputElement = document.getElementById("inputBox");
+const container =      document.querySelector(".container");
+const submitElement =  document.querySelector(".submit-button");
+const inputElement =   document.getElementById("input-box");
 const weatherConIcon = document.getElementById("weather-condition-icon");
 const outputElement1 = document.getElementById("city");
 const outputElement2 = document.getElementById("temp");
@@ -217,15 +216,23 @@ submitElement.addEventListener('click', async e => {
           const { weather_code: daily_weather_code, temperature_2m_max, temperature_2m_min, time } = weather.daily;
           const weatherCondition = weather_codes[weather_code];
           const imgSrc = `assets/${is_day ? weatherCondition.icons.day : weatherCondition.icons.night}`;
+          const imgTitle = weatherCondition.name;
+
           outputElement1.textContent = "Stad: " + cityName;
           outputElement2.textContent = "Temperatur: " + temperature_2m + "°C";
           outputElement3.textContent = "Fuktighet: " + relative_humidity_2m + "%";
           outputElement4.textContent = "Vindhastighet: " + wind_speed_10m + " km/s";
           weatherConIcon.classList.remove('hidden');
           weatherConIcon.src = imgSrc;
-          weatherConIcon.title = "";
-     } catch {
+          weatherConIcon.title = imgTitle;
+
+     } catch (e) {
+          console.log(e);
+          if(!weatherConIcon.classList.contains('hidden')) weatherConIcon.classList.add('hidden');
           outputElement1.textContent = "Location Not Found";
+          outputElement2.textContent = "Temperatur: N/A";
+          outputElement3.textContent = "Fuktighet: N/A";
+          outputElement4.textContent = "Vindhastighet: N/A";
      }
 });
 
@@ -249,10 +256,3 @@ async function getWeather(location) {
      console.log("Generation time: " + data.generationtime_ms + "ms");
      return data;
 }
-
-
-
-
-
-
-

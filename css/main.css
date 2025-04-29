@@ -53,11 +53,11 @@ body {
 
 .weather-section {
     display: flex;
+    flex-direction: row;
     max-width: 1200px;
-    height: 125px;
     padding: 20px;
     box-shadow: 0 2px 5px;
-    border-radius: 40px;
+    border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
@@ -73,7 +73,7 @@ body {
     margin: 10px;
 }
 
-.submitButton {
+.submit-button {
     margin: 10px;
     width: 70px;
     border: thin solid black;
@@ -82,13 +82,18 @@ body {
     border-radius: 10px;
 }
 
-.submitButton:hover {
+.submit-button:hover {
     background-color: #ddd;
 }
 
 .weahter-icon {
     display: flex;
     justify-content: end;
+}
+
+.current-weather {
+    display: flex;
+    background-color: #fff;
 }
 
 .current-data {
@@ -98,6 +103,15 @@ body {
     border: thin solid black;
     border-radius: 10px;
 }
+
+.weather-forecast-daily {
+    margin-top: 10px;
+    padding: 10px;
+    border: thin solid black;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
 
 @media screen and (max-width: 1200px){
     

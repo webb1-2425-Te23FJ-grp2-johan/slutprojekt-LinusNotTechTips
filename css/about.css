@@ -33,4 +33,14 @@
     background-color: #f0f0f0;
 }
 
-
+.main {
+    display: flex;
+    width: 1200px;
+    padding: 15px;
+    margin: 20px;
+    background-color: #eee;
+    border: thin solid black;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+}

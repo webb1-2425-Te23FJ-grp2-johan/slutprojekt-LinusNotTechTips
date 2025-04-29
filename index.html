@@ -18,18 +18,24 @@
           </nav>
 
           <section class="weather-section">
-               <form class="submitForm">
+               <form class="submit-form">
                     <h2 class="title">Väder Hämtare 1337</h2>
-                    <input id="inputBox" placeholder="sök..." type="text" aria-label="Sök efter väder">
-                    <button class="submitButton" type="submit">Hämta</button>
+                    <input id="input-box" placeholder="sök..." type="text" aria-label="Sök efter väder">
+                    <button class="submit-button" type="submit">Hämta</button>
                </form>
-               <p class="current-data" id="city">Stad: N/A</p>
-               <p class="current-data" id="temp">Temperatur: N/A</p>
-               <p class="current-data" id="humid">Fuktighet: N/A</p>
-               <p class="current-data" id="wind">Vindhastighet: N/A</p>
-               <div class="weather-icon">
-                    <img class="hidden" src="#" id="weather-condition-icon" alt="Väder ikon" width="100" height="100">
-               </div>
+               <section class="current-weather">
+                    <p class="current-data" id="city">Stad: N/A</p>
+                    <p class="current-data" id="temp">Temperatur: N/A</p>
+                    <p class="current-data" id="humid">Fuktighet: N/A</p>
+                    <p class="current-data" id="wind">Vindhastighet: N/A</p>
+                    <div class="weather-icon">
+                         <img class="hidden" src="#" id="weather-condition-icon" alt="Väder ikon" width="100"
+                              height="100">
+                    </div>
+               </section>
+               <section class="weather-forecast-daily">
+
+               </section>
           </section>
           <script src="js/script.js"></script>
      </section>
