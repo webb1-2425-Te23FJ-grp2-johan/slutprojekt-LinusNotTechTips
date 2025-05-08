@@ -20,10 +20,12 @@
           <section class="weather-section">
                <form class="submit-form">
                     <h2 class="title">Väder Hämtare 1337</h2>
-                    <input id="input-box" placeholder="sök..." type="text" aria-label="Sök efter väder">
-                    <button class="submit-button" type="submit">Hämta</button>
+                    <div class="input-form">
+                         <input id="input-box" placeholder="sök..." type="text" aria-label="Sök efter väder">
+                         <button class="submit-button" type="submit">Hämta</button>
+                    </div>
                </form>
-               <section class="current-weather">
+               <summary class="current-weather">
                     <p class="current-data" id="city">Stad: N/A</p>
                     <p class="current-data" id="temp">Temperatur: N/A</p>
                     <p class="current-data" id="humid">Fuktighet: N/A</p>
@@ -32,9 +34,15 @@
                          <img class="hidden" src="#" id="weather-condition-icon" alt="Väder ikon" width="100"
                               height="100">
                     </div>
-               </section>
+               </summary>
                <section class="weather-forecast-daily">
-
+                    <div class="card" id="daily1"></div>
+                    <div class="card" id="daily2"></div>
+                    <div class="card" id="daily3"></div>
+                    <div class="card" id="daily4"></div>
+                    <div class="card" id="daily5"></div>
+                    <div class="card" id="daily6"></div>
+                    <div class="card" id="daily7"></div>
                </section>
           </section>
           <script src="js/script.js"></script>

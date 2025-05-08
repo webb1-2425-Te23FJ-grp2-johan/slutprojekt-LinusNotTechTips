@@ -52,14 +52,16 @@ body {
 }
 
 .weather-section {
-    display: flex;
-    flex-direction: row;
-    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 30% 1fr;
+    grid-template-areas:
+    'submit-form current-weather'
+    'weather-forecast-daily weather-forecast-daily';
+    width: 1200px;
     padding: 20px;
     box-shadow: 0 2px 5px;
     border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #fff;
 }
 
@@ -73,45 +75,75 @@ body {
     margin: 10px;
 }
 
+.submit-form {
+    grid-area: submit-form;
+}
+
+#input-box {
+    height: 30px;
+    width: 260px;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .submit-button {
-    margin: 10px;
-    width: 70px;
+    height: 30px;
+    width: 130px;
     border: thin solid black;
     background-color: white;
     text-align: center;
     border-radius: 10px;
+    transition: all 0.3s ease-in;
 }
 
 .submit-button:hover {
     background-color: #ddd;
 }
 
-.weahter-icon {
-    display: flex;
-    justify-content: end;
-}
-
 .current-weather {
+    grid-area: current-weather;
     display: flex;
     background-color: #fff;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .current-data {
     margin: 10px;
     padding: 10px;
     width: 120px;
+    height: 90px;
     border: thin solid black;
     border-radius: 10px;
 }
 
 .weather-forecast-daily {
-    margin-top: 10px;
+    grid-area: weather-forecast-daily;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 10px;
+    margin: 10px;
+    height: 200px;
     border: thin solid black;
+    background-color: white;
+    text-align: center;
     border-radius: 10px;
-    background-color: #f9f9f9;
 }
 
+.card {
+    padding: 10px;
+    width: 140px;
+    height: 180px;
+    border: thin solid black;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+}
 
 @media screen and (max-width: 1200px){
     
