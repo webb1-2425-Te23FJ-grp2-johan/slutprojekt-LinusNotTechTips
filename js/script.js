@@ -1,3 +1,4 @@
+// https://github.com/ArsenTech/source-codes/tree/main/Weather%20App/assets
 const weather_codes = {
      0: {
           name: "Clear Sky",
@@ -197,14 +198,15 @@ const weather_codes = {
      }
 };
 
-const container =      document.querySelector(".container");
-const submitElement =  document.querySelector(".submit-button");
-const inputElement =   document.getElementById("input-box");
-const weatherConIcon = document.getElementById("weather-condition-icon");
-const outputElement1 = document.getElementById("city");
-const outputElement2 = document.getElementById("temp");
-const outputElement3 = document.getElementById("humid");
-const outputElement4 = document.getElementById("wind");
+const container =          document.querySelector(".container");
+const submitElement =      document.querySelector(".submit-button");
+const dailyForecastElems = document.querySelector(".weather-forecast-daily");
+const inputElement =       document.getElementById("input-box");
+const weatherConIcon =     document.getElementById("weather-condition-icon");
+const outputElement1 =     document.getElementById("city");
+const outputElement2 =     document.getElementById("temp");
+const outputElement3 =     document.getElementById("humid");
+const outputElement4 =     document.getElementById("wind");
 
 let cityName = "None";
 
@@ -225,6 +227,24 @@ submitElement.addEventListener('click', async e => {
           weatherConIcon.classList.remove('hidden');
           weatherConIcon.src = imgSrc;
           weatherConIcon.title = imgTitle;
+
+          dailyForecastElems.replaceChildren();
+
+          for(let i=0;i<7;i++){
+               const weatherCond = weather_codes[daily_weather_code[i]];
+               const temperatureMax = temperature_2m_max[i];
+               const temperatureMin = temperature_2m_min[i];
+               const timestamp = time[i] ;
+               const elem = document.createElement("div");
+               elem.classList = "card";
+               elem.title = weatherCond.name;
+               elem.innerHTML = `
+               <img src="assets/${weatherCond.icons.day}" alt="weather-icon" width="100" height="100"/>
+               <p>${temperatureMin} - ${temperatureMax} °C</p>
+               <p>${timestamp}</p>
+               `
+               dailyForecastElems.appendChild(elem)
+          }
 
      } catch (e) {
           console.log(e);
