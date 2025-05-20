@@ -1,4 +1,4 @@
-// https://github.com/ArsenTech/source-codes/tree/main/Weather%20App/assets
+// Bilder tagna från: https://github.com/ArsenTech/source-codes/tree/main/Weather%20App/assets
 const weather_codes = {
      0: {
           name: "Clear Sky",
@@ -198,15 +198,15 @@ const weather_codes = {
      }
 };
 
-const container =          document.querySelector(".container");
-const submitElement =      document.querySelector(".submit-button");
+const container = document.querySelector(".container");
+const submitElement = document.querySelector(".submit-button");
 const dailyForecastElems = document.querySelector(".weather-forecast-daily");
-const inputElement =       document.getElementById("input-box");
-const weatherConIcon =     document.getElementById("weather-condition-icon");
-const outputElement1 =     document.getElementById("city");
-const outputElement2 =     document.getElementById("temp");
-const outputElement3 =     document.getElementById("humid");
-const outputElement4 =     document.getElementById("wind");
+const inputElement = document.getElementById("input-box");
+const weatherConIcon = document.getElementById("weather-condition-icon");
+const outputElement1 = document.getElementById("city");
+const outputElement2 = document.getElementById("temp");
+const outputElement3 = document.getElementById("humid");
+const outputElement4 = document.getElementById("wind");
 
 let cityName = "None";
 
@@ -217,7 +217,7 @@ submitElement.addEventListener('click', async e => {
           const { temperature_2m, relative_humidity_2m, weather_code, is_day, wind_speed_10m } = weather.current;
           const { weather_code: daily_weather_code, temperature_2m_max, temperature_2m_min, time } = weather.daily;
           const weatherCondition = weather_codes[weather_code];
-          const imgSrc = `assets/${is_day ? weatherCondition.icons.day : weatherCondition.icons.night}`;
+          const imgSrc = `assets/main/${is_day ? weatherCondition.icons.day : weatherCondition.icons.night}`;
           const imgTitle = weatherCondition.name;
 
           outputElement1.textContent = "Stad: " + cityName;
@@ -230,16 +230,16 @@ submitElement.addEventListener('click', async e => {
 
           dailyForecastElems.replaceChildren();
 
-          for(let i=0;i<7;i++){
+          for (let i = 0; i < 7; i++) {
                const weatherCond = weather_codes[daily_weather_code[i]];
                const temperatureMax = temperature_2m_max[i];
                const temperatureMin = temperature_2m_min[i];
-               const timestamp = time[i] ;
+               const timestamp = time[i];
                const elem = document.createElement("div");
-               elem.classList = "card";
+               elem.classList = "weekly-data-card";
                elem.title = weatherCond.name;
                elem.innerHTML = `
-               <img src="assets/${weatherCond.icons.day}" alt="weather-icon" width="100" height="100"/>
+               <img src="assets/main/${weatherCond.icons.day}" alt="weather-icon" width="100" height="100"/>
                <p>${temperatureMin} - ${temperatureMax} °C</p>
                <p>${timestamp}</p>
                `
@@ -248,14 +248,13 @@ submitElement.addEventListener('click', async e => {
 
      } catch (e) {
           console.log(e);
-          if(!weatherConIcon.classList.contains('hidden')) weatherConIcon.classList.add('hidden');
+          if (!weatherConIcon.classList.contains('hidden')) weatherConIcon.classList.add('hidden');
           outputElement1.textContent = "Location Not Found";
           outputElement2.textContent = "Temperatur: N/A";
           outputElement3.textContent = "Fuktighet: N/A";
           outputElement4.textContent = "Vindhastighet: N/A";
      }
 });
-
 
 async function getLocation(location) {
      const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${location}&count=1&language=en&format=json`);

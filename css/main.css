@@ -1,3 +1,9 @@
+:root {
+    --pc-text: 1rem;
+    --tablet-text: 0.92rem;
+    --phone-text: 0.82rem;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +18,7 @@
 body {
     display: flex;
     position: relative;
-    background: url("../assets/bg.webp") no-repeat center/cover;
+    background: url("../assets/main/bg-1920x1080.webp") no-repeat center/cover;
     min-height: 100lvh;
     justify-content: center;
     align-items: center;
@@ -56,8 +62,8 @@ body {
     grid-template-columns: 40% 1fr;
     grid-template-rows: 30% 1fr;
     grid-template-areas:
-    'submit-form current-weather'
-    'weather-forecast-daily weather-forecast-daily';
+        'submit-form current-weather'
+        'weather-forecast-daily weather-forecast-daily';
     width: 1200px;
     padding: 20px;
     box-shadow: 0 2px 5px;
@@ -97,7 +103,6 @@ body {
     background-color: #20af3f;
     text-align: center;
     border-radius: 10px;
-    transition: all 0.3s ease-in;
 }
 
 .submit-button:hover {
@@ -116,8 +121,10 @@ body {
     margin: 10px;
     padding: 10px;
     width: 120px;
-    height: 90px;
-    border: thin solid black;
+    height: 100px;
+    border: thin solid gray;
+    background-color: gainsboro;
+    text-align: center;
     border-radius: 10px;
 }
 
@@ -126,31 +133,183 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 20px;
     height: 200px;
     background-color: white;
     text-align: center;
     border-radius: 10px;
 }
 
-.card {
+.weather-icon {
+    position: relative;
+    border: thin solid gray;
+    background-color: gainsboro;
+    border-radius: 10px;
+    bottom: -10px;
+    width: 100px;
+    height: 100px;
+}
+
+.weekly-data-card {
     padding: 10px;
     width: 140px;
     height: 200px;
-    border: thin solid black;
-    background-color: white;
+    border: thin solid gray;
+    background-color: gainsboro;
     text-align: center;
     border-radius: 10px;
 }
 
-@media screen and (max-width: 1200px){
+
+@media screen and (max-width: 1200px) {
+    * {
+        font-size: var(--pc-text);
+    }
+
+    body {
+        display: flex;
+        position: relative;
+        background: url("../assets/main/bg-1200x675.webp") no-repeat center/cover;
+        min-height: 100lvh;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        padding-top: 20px;
+    }
     
+    .weather-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            'submit-form'
+            'current-weather'
+            'weather-forecast-daily';
+        width: 600px;
+        height: 600px;
+        padding: 20px;
+    }
+
+    .weekly-data-card {
+        padding: 10px;
+        width: 120px;
+        height: 180px;
+        border: thin solid gray;
+        background-color: gainsboro;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .current-data {
+        margin: 10px;
+        padding: 10px;
+        width: 100px;
+        height: 80px;
+        border: thin solid gray;
+        background-color: gainsboro;
+        text-align: center;
+        border-radius: 10px;
+    }
 }
 
-@media screen and (max-width: 800px){
-    
+@media screen and (max-width: 600px) {
+    * {
+        font-size: var(--tablet-text);
+    }
+
+    body {
+        display: flex;
+        position: relative;
+        background: url("../assets/main/bg-600x338.webp") no-repeat center/cover;
+        min-height: 100lvh;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        padding-top: 20px;
+    }
+
+    .weather-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            'submit-form'
+            'current-weather'
+            'weather-forecast-daily';
+        width: 400px;
+        height: 600px;
+        padding: 20px;
+    }
+
+    .weekly-data-card {
+        padding: 10px;
+        width: 100px;
+        height: 160px;
+        border: thin solid gray;
+        background-color: gainsboro;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .current-data {
+        margin: 10px;
+        padding: 10px;
+        width: 80px;
+        height: 60px;
+        border: thin solid gray;
+        background-color: gainsboro;
+        text-align: center;
+        border-radius: 10px;
+    }
 }
 
-@media screen and (max-width: 400px){
-    
+@media screen and (max-width: 400px) {
+    * {
+        font-size: var(--phone-text);
+    }
+
+    body {
+        display: flex;
+        position: relative;
+        background: url("../assets/main/bg-400x225.webp") no-repeat center/cover;
+        min-height: 100lvh;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        padding-top: 20px;
+    }
+
+    .weather-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            'submit-form'
+            'current-weather'
+            'weather-forecast-daily';
+        width: 400px;
+        height: 600px;
+        padding: 20px;
+    }
+
+    .weekly-data-card {
+        padding: 10px;
+        width: 100px;
+        height: 160px;
+        border: thin solid gray;
+        background-color: gainsboro;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .current-data {
+        margin: 10px;
+        padding: 10px;
+        width: 80px;
+        height: 60px;
+        border: thin solid gray;
+        background-color: gainsboro;
+        text-align: center;
+        border-radius: 10px;
+    }
 }
