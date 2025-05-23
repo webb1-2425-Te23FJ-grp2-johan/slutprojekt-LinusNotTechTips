@@ -1,4 +1,3 @@
-// Bilder tagna från: https://github.com/ArsenTech/source-codes/tree/main/Weather%20App/assets
 const weather_codes = {
      0: {
           name: "Clear Sky",
@@ -198,15 +197,14 @@ const weather_codes = {
      }
 };
 
-const container = document.querySelector(".container");
-const submitElement = document.querySelector(".submit-button");
-const dailyForecastElems = document.querySelector(".weather-forecast-daily");
-const inputElement = document.getElementById("input-box");
-const weatherConIcon = document.getElementById("weather-condition-icon");
-const outputElement1 = document.getElementById("city");
-const outputElement2 = document.getElementById("temp");
-const outputElement3 = document.getElementById("humid");
-const outputElement4 = document.getElementById("wind");
+const submitElement =        document.querySelector(".submit-button");
+const dailyForecastElems =   document.querySelector(".weather-forecast-daily");
+const inputElement =         document.getElementById("input-box");
+const weatherConIcon =       document.getElementById("weather-condition-icon");
+const outputElement1 =       document.getElementById("city");
+const outputElement2 =       document.getElementById("temp");
+const outputElement3 =       document.getElementById("humid");
+const outputElement4 =       document.getElementById("wind");
 
 let cityName = "None";
 
@@ -223,10 +221,10 @@ submitElement.addEventListener('click', async e => {
           outputElement1.textContent = "Stad: " + cityName;
           outputElement2.textContent = "Temperatur: " + temperature_2m + "°C";
           outputElement3.textContent = "Fuktighet: " + relative_humidity_2m + "%";
-          outputElement4.textContent = "Vindhastighet: " + wind_speed_10m + " km/s";
-          weatherConIcon.classList.remove('hidden');
+          outputElement4.textContent = "Vind. H: " + wind_speed_10m + " km/s";
           weatherConIcon.src = imgSrc;
           weatherConIcon.title = imgTitle;
+          weatherConIcon.classList.remove('hidden');
 
           dailyForecastElems.replaceChildren();
 
@@ -252,7 +250,7 @@ submitElement.addEventListener('click', async e => {
           outputElement1.textContent = "Location Not Found";
           outputElement2.textContent = "Temperatur: N/A";
           outputElement3.textContent = "Fuktighet: N/A";
-          outputElement4.textContent = "Vindhastighet: N/A";
+          outputElement4.textContent = "Vind.h: N/A";
      }
 });
 

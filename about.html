@@ -20,7 +20,7 @@
 
         <main class="main">
             <h2>Hej! Detta är en elite nivå väder hemsida.</h2>
-            <aside class="text-aside">
+            <section class="text-aside">
                 <p>Denna hemsida kan visa väderinformation för olika platser runt om i världen. Här hittar du aktuella
                     temperaturer, prognoser och annan relevant väderdata på ett enkelt och överskådligt sätt.</p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, temporibus repudiandae quos, maxime
@@ -29,10 +29,14 @@
                 Tempore autem
                 voluptates quisquam. Aperiam, voluptatem placeat illo aliquam debitis reprehenderit temporibus?
                 Veniam voluptatibus saepe non nemo, eligendi voluptate nobis quibusdam ad.</p>
-            </aside>
+            </section>
 
             <div class="world-picture">
-                <img src="assets/about/World-1200x600.webp" alt="världsbild">
+                <picture>
+                    <source srcset="../assets/about/World-400x200.webp" media="(max-width: 600px)">
+                    <source srcset="../assets/about/World-600x300.webp" media="(max-width: 1200px)">
+                    <img src="../assets/about/World-1200x600.webp" alt="Världen">
+                </picture>
             </div>
         </main>
 
