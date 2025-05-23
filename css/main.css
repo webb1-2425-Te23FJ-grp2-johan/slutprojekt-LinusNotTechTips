@@ -88,6 +88,7 @@ body {
 #input-box {
     height: 30px;
     width: 260px;
+    margin-right: 10px;
 }
 
 .input-form {
