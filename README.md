@@ -1,7 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/8H6nyhP0)
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=18889175)
 # Väder Hämtare 1337
-Ersätt Projektnamn med ditt projekts namn. 
 
 Under resterande del av kursen ska ni skapa en webbsida och dokumentera det. Du har chansen att visa hela processen - från idéskiss, problemformulering och definition av målgrupp till genomförande och testning av interaktiv prototyp för att slutligen dokumentera och lämna över prototyp och dokumentation. 
 
